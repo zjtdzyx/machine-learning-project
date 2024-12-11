@@ -1,4 +1,4 @@
-# 练习题目：线性回归 - 波士顿房价预测 - 模型评估
+# 练习题目：线性回归 - 加利福尼亚房价预测 - 模型评估
 # 评估线性回归模型的误差和准确性，并分析模型残差
 
 # 导入所需的库
@@ -6,13 +6,17 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
-from sklearn.datasets import load_boston
+from sklearn.datasets import fetch_california_housing
 from sklearn.metrics import mean_squared_error, r2_score, mean_absolute_error
+from matplotlib import rcParams
+# 全局字体设置
+rcParams['font.sans-serif'] = ['SimHei']
+rcParams['axes.unicode_minus'] = False
 
-# 加载波士顿房价数据集
-boston = load_boston()
-X = boston.data  # 特征
-y = boston.target  # 目标变量（房价）
+# 加载加利福尼亚房价数据集
+california_housing = fetch_california_housing()
+X = california_housing.data  # 特征
+y = california_housing.target  # 目标变量（房价）
 
 # 将数据分为训练集和测试集（80%训练，20%测试）
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
@@ -56,7 +60,6 @@ plt.figure(figsize=(10, 6))
 plt.scatter(y_test, y_pred, color='blue', alpha=0.5)
 plt.plot([y.min(), y.max()], [y.min(), y.max()], color='red', linestyle='--')  # 理想预测线
 plt.title("实际房价与预测房价的对比")
-plt.xlabel("实际房价")
-plt.ylabel("预测房价")
+plt.xlabel("实际房价 (单位：10万 $)")
+plt.ylabel("预测房价 (单位：10万 $)")
 plt.show()
-

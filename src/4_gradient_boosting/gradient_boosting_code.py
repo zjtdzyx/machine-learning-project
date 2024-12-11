@@ -12,8 +12,11 @@ from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_sc
 import xgboost as xgb
 from sklearn.preprocessing import LabelEncoder
 
+# 数据集URL
+url = "https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv"
+
 # 读取数据集
-train_df = pd.read_csv('train.csv')
+train_df = pd.read_csv(url)
 
 # 数据预处理
 # 填补缺失值
