@@ -1,4 +1,4 @@
-# 机器学习算法与实践
+# 机器学习算法与实践[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/zjtdzyx/machine-learning-project)
 
 > 项目的来源是我大学机器学习课程的结课论文，一时兴起就想着将练习整合起来，进行开源，供其他初学者学习。项目相关的课程论文详见项目根目录下的机器学习课程论文.PDF文件。或者直接在浏览器中查看https://zjtdzyx.github.io/machine-learning-project/
 
